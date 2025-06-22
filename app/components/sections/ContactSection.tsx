@@ -17,7 +17,7 @@ export default function ContactSection() {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 gap-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -55,7 +55,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-500">© 2024 後藤碧生 (Aoi Goto). All rights reserved.</p>
+          <p className="text-gray-500">© 2025 後藤碧生 (Aoi Goto). All rights reserved.</p>
         </motion.div>
       </div>
     </section>
