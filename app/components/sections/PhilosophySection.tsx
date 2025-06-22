@@ -2,22 +2,42 @@
 
 import { motion } from "framer-motion"
 import { Monitor, Rocket, Code, Users, Heart, Lightbulb, Star } from "lucide-react"
+import Image from "next/image"
 
 export default function PhilosophySection() {
   return (
     <section className="py-20 px-4 font-serif" id="philosophy">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto">
+        {/* メインコンテンツ: 顔写真 + テキスト */}
         <motion.div
+          className="flex flex-col md:flex-row items-center gap-12 mb-20"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-cyan-400">私の原動力</h2>
-          <div className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent">
-            人を喜ばせ、人の役に立つ
+          {/* 左側: 顔写真 */}
+          <div className="flex-shrink-0">
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-cyan-400 shadow-2xl">
+              <Image
+                src="/profile-photo.jpg" // 顔写真のパスを指定してください
+                alt="Aoi Goto"
+                width={256}
+                height={256}
+                className="w-full h-full object-cover"
+                priority
+              />
+            </div>
           </div>
-          <p className="text-xl text-gray-400 mb-16">これが私のプログラミングの原点です。</p>
+
+          {/* 右側: テキストコンテンツ */}
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 text-cyan-400">私の原動力</h2>
+            <div className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent">
+              人を喜ばせ、人の役に立つ
+            </div>
+            <p className="text-xl text-gray-400">これが私のプログラミングの原点です。</p>
+          </div>
         </motion.div>
 
         {/* 探求の歴史 */}
