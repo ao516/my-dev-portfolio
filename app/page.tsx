@@ -7,7 +7,11 @@ import { useScroll, useTransform } from "framer-motion"
 import LoadingScreen from "@/app/components/shared/LoadingScreen"
 import PhilosophySection from "@/app/components/sections/PhilosophySection"
 import SkillsSection from "@/app/components/sections/SkillsSection"
+import TechStackSection from "@/app/components/sections/TechStackSection"
+import OtherStrengthsSection from "@/app/components/sections/OtherStrengthsSection"
 import ProjectSection from "@/app/components/sections/ProjectSection"
+import OtherProjectsSection from "@/app/components/sections/OtherProjectsSection"
+import FutureVisionSection from "@/app/components/sections/FutureVisionSection"
 import ContactSection from "@/app/components/sections/ContactSection"
 
 export default function Portfolio() {
@@ -38,10 +42,22 @@ export default function Portfolio() {
       {/* セクション2: 主要スキル・専門分野のハイライト */}
       <SkillsSection />
 
-      {/* セクション3: キープロジェクト - 探究アーカイブ */}
+      {/* セクション3: 技術スタック */}
+      <TechStackSection />
+
+      {/* セクション4: プログラミング以外の強み */}
+      <OtherStrengthsSection />
+
+      {/* セクション5: キープロジェクト - 探究アーカイブ */}
       <ProjectSection />
 
-      {/* セクション4: お問い合わせ */}
+      {/* セクション6: その他の注目プロジェクト */}
+      <OtherProjectsSection />
+
+      {/* セクション7: 将来の展望 */}
+      <FutureVisionSection />
+
+      {/* セクション8: お問い合わせ */}
       <ContactSection />
 
       {/* 探究アーカイブ詳細セクション（隠しセクション） */}
