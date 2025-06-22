@@ -63,7 +63,7 @@ export default function TechStackSection() {
   )
 
   return (
-    <section className="py-20 px-4" id="tech-stack">
+    <section className="py-20 px-4 font-serif" id="tech-stack">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"
