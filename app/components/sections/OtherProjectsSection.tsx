@@ -70,7 +70,7 @@ export default function OtherProjectsSection() {
   ]
 
   return (
-    <section className="py-20 px-4 bg-gray-900 font-serif" id="other-projects">
+    <section className="py-20 px-4 font-serif" id="other-projects">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"

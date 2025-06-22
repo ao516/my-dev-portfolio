@@ -90,7 +90,7 @@ export default function FutureVisionSection() {
   ]
 
   return (
-    <section className="py-20 px-4 font-serif" id="future-vision">
+    <section className="py-20 px-4 bg-gray-900 font-serif" id="future-vision">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -151,29 +151,6 @@ export default function FutureVisionSection() {
                 <p className="text-gray-300 text-sm">{value.description}</p>
               </div>
             ))}
-          </div>
-        </motion.div>
-
-        {/* メッセージ */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-gradient-to-r from-cyan-400 to-blue-500 p-8 rounded-lg">
-            <h3 className="text-2xl font-bold mb-4">一緒に未来を創りませんか？</h3>
-            <p className="text-lg text-gray-900 mb-6">
-              技術を通じて、あなたのビジョンを現実に変えるお手伝いをします。<br />
-              新しいプロジェクトやチャレンジングな課題について、お気軽にご相談ください。
-            </p>
-            <a
-              href="#contact"
-              className="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors"
-            >
-              お問い合わせ
-            </a>
           </div>
         </motion.div>
       </div>

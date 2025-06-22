@@ -25,6 +25,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Portfolio() {
   // アニメーション制御用のstate
@@ -381,21 +382,22 @@ export default function Portfolio() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  className="bg-cyan-600 hover:bg-cyan-700 text-white"
-                  onClick={() =>
-                    document.getElementById("tankyu-archive-details")?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  詳しくはこちら
-                </Button>
+                <Link href="/tankyu-archive">
+                  <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
+                    詳しくはこちら
+                  </Button>
+                </Link>
                 <Button variant="outline" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black">
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  App Store
+                  <a href="https://apps.apple.com/jp/app/%E7%B8%A3%E9%99%B5%E6%8E%A2%E7%A9%B6%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96/id6738385612" target="_blank" rel="noopener noreferrer">
+                    App Store
+                  </a>
                 </Button>
                 <Button variant="outline" className="border-gray-600 text-gray-400 hover:bg-gray-600 hover:text-white">
                   <Github className="w-4 h-4 mr-2" />
-                  GitHub
+                  <a href="https://github.com/ao516/kenryo_tankyu" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>
                 </Button>
               </div>
             </motion.div>
@@ -955,63 +957,6 @@ export default function Portfolio() {
           >
             <p className="text-gray-500">© 2024 後藤碧生 (Aoi Goto). All rights reserved.</p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* 探究アーカイブ詳細セクション（隠しセクション） */}
-      <section className="py-20 px-4 bg-black" id="tankyu-archive-details">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cyan-400">探究アーカイブ - 詳細</h2>
-            <p className="text-xl text-gray-400">プロジェクトの詳細な技術仕様と開発プロセス</p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold mb-6">技術的な挑戦</h3>
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  このプロジェクトでは、高校生の探究活動成果を効率的に検索・閲覧できるシステムの構築が最大の課題でした。
-                  大量のデータを扱いながらも、ユーザーフレンドリーなインターフェースを実現する必要がありました。
-                </p>
-                <p>
-                  Algoliaを活用した高速検索機能の実装、Firestoreでのデータ構造設計、
-                  そしてRiverpodを使った状態管理の最適化など、モバイルアプリ開発の様々な技術を統合しました。
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold mb-6">プロジェクト管理</h3>
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  発起人として、プロジェクトの企画から実装、リリースまでの全工程を管理しました。
-                  チームメンバーとの協働、スケジュール管理、品質保証など、
-                  技術的な側面だけでなくマネジメントスキルも大きく向上しました。
-                </p>
-                <p>
-                  App Storeでの実際のリリース経験を通じて、
-                  ユーザーフィードバックの収集と継続的な改善プロセスの重要性を学びました。
-                </p>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
     </div>

@@ -71,7 +71,7 @@ export default function PhilosophySection() {
             <div className="flex flex-col items-center p-6 border border-gray-800 rounded-lg">
               <Users className="w-12 h-12 text-cyan-400 mb-4" />
               <h4 className="text-xl font-bold mb-2">マネージャー</h4>
-              <p className="text-gray-400 text-center">生徒会長経験で培ったリーダーシップを活かし、<br />現在も2つの団体の代表を務めています</p>
+              <p className="text-gray-400 text-center">小中高の生徒会長経験で培ったリーダーシップを活かし、<br />現在も2つの団体の代表を務めています</p>
             </div>
           </div>
         </motion.div>
