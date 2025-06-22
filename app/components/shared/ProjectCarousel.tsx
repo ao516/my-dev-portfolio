@@ -1,11 +1,14 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 interface ProjectScreenshot {
   image: string
+  title: string
+  description: string
   tech: string[]
 }
 
@@ -16,55 +19,84 @@ interface ProjectCarouselProps {
 export default function ProjectCarousel({ screenshots }: ProjectCarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  // スライドショーの自動切り替え
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % screenshots.length)
-    }, 4000) // 4秒ごとに切り替え
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % screenshots.length)
+  }
 
-    return () => clearInterval(interval)
-  }, [screenshots.length])
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + screenshots.length) % screenshots.length)
+  }
 
   return (
-    <div className="relative max-w-md mx-auto">
-      {/* スマートフォンモックアップ */}
-      <div className="relative bg-gray-800 rounded-3xl p-4 shadow-2xl">
-        <div className="bg-black rounded-2xl overflow-hidden">
-          <Image
-            src={screenshots[currentSlide].image || "/placeholder.svg"}
-            alt={`プロジェクト スクリーンショット ${currentSlide + 1}`}
-            width={300}
-            height={600}
-            className="w-full h-auto"
-          />
-        </div>
-      </div>
-
-      {/* 技術スタック表示 */}
-      <div className="absolute -right-4 top-1/2 transform -translate-y-1/2">
-        <div className="bg-gray-900 border border-cyan-400 rounded-lg p-4 min-w-[150px]">
-          <h4 className="text-sm font-bold text-cyan-400 mb-2">使用技術</h4>
-          {screenshots[currentSlide].tech.map((tech, index) => (
-            <div key={index} className="flex items-center mb-1">
-              <div className="w-2 h-2 bg-cyan-400 rounded-full mr-2"></div>
-              <span className="text-sm">{tech}</span>
+    <div className="w-full">
+      <div className="flex flex-col md:flex-row gap-8 items-stretch max-w-4xl mx-auto">
+        {/* 左側: カルーセル */}
+        <div className="relative max-w-xs mx-auto">
+          {/* スマートフォンモックアップ */}
+          <div className="relative bg-gray-800 rounded-3xl p-4 shadow-2xl">
+            <div className="bg-black rounded-2xl overflow-hidden">
+              <Image
+                src={screenshots[currentSlide].image || "/placeholder.svg"}
+                alt={`プロジェクト スクリーンショット ${currentSlide + 1}`}
+                width={300}
+                height={600}
+                className="w-full h-auto"
+              />
             </div>
-          ))}
+          </div>
         </div>
-      </div>
 
-      {/* ナビゲーション */}
-      <div className="flex justify-center mt-6 space-x-2">
-        {screenshots.map((_, index) => (
-          <button
-            key={index}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              index === currentSlide ? "bg-cyan-400" : "bg-gray-600"
-            }`}
-            onClick={() => setCurrentSlide(index)}
-          />
-        ))}
+        {/* 右側: 説明 */}
+        <motion.div 
+          key={currentSlide}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex-1 flex flex-col text-center py-8 md:py-12"
+        >
+          <div className="flex-grow">
+            <h3 className="text-2xl font-bold text-cyan-400 mb-3">{screenshots[currentSlide].title}</h3>
+            <p className="text-gray-300 mb-5 min-h-[100px] whitespace-pre-line text-left">{screenshots[currentSlide].description}</p>
+            <h4 className="font-bold mb-3 text-cyan-400">使用技術</h4>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {screenshots[currentSlide].tech.map((t, i) => (
+                <span key={i} className="bg-gray-700 text-cyan-300 text-sm font-medium px-3 py-1.5 rounded-full">{t}</span>
+              ))}
+            </div>
+          </div>
+          
+          {/* ナビゲーションボタン */}
+          <div className="mt-8 flex items-center gap-4 justify-center">
+            <button 
+              onClick={prevSlide}
+              className="bg-gray-800 p-3 rounded-full text-cyan-400 hover:bg-gray-700 shadow-md"
+              aria-label="前のスライドへ"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            {/* ページインジケーター */}
+            <div className="flex items-center gap-2">
+              {screenshots.map((_, idx) => (
+                <span
+                  key={idx}
+                  className={`w-3 h-3 rounded-full ${
+                    idx === currentSlide
+                      ? "bg-cyan-400 scale-110 shadow"
+                      : "bg-gray-600"
+                  }`}
+                />
+              ))}
+            </div>
+            <button 
+              onClick={nextSlide}
+              className="bg-gray-800 p-3 rounded-full text-cyan-400 hover:bg-gray-700 shadow-md"
+              aria-label="次のスライドへ"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </motion.div>
       </div>
     </div>
   )
-} 
+}

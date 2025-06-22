@@ -5,7 +5,7 @@ import { Mail, Github, Smartphone } from "lucide-react"
 
 export default function ContactSection() {
   return (
-    <section className="py-20 px-4 bg-gray-900 font-serif" id="contact">
+    <section className="py-20 px-4 font-serif" id="contact">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -44,16 +44,6 @@ export default function ContactSection() {
             >
               @ao516
             </a>
-          </div>
-
-          {/* App Store */}
-          <div className="flex flex-col items-center p-6 border border-gray-700 rounded-lg hover:border-cyan-400 transition-colors">
-            <Smartphone className="w-12 h-12 text-cyan-400 mb-4" />
-            <h3 className="text-xl font-bold mb-2">App Store</h3>
-            <p className="text-gray-400 mb-2">探究アーカイブ</p>
-            <div className="w-24 h-24 bg-gray-800 rounded-lg flex items-center justify-center">
-              <span className="text-xs text-gray-500">QR Code</span>
-            </div>
           </div>
         </motion.div>
 
