@@ -23,10 +23,7 @@ export default function PortfolioContent() {
       {/* セクション4: 技術スタック */}
       <TechStackSection />
 
-      {/* セクション5: 将来の展望 */}
-      <FutureVisionSection />
-
-      {/* セクション6: お問い合わせ */}
+      {/* セクション5: お問い合わせ */}
       <ContactSection />
     </div>
   )

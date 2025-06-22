@@ -79,7 +79,7 @@ export default function OtherProjectsSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cyan-400">その他取り組んできたことなど</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cyan-400">その他取り組んできたこと</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
