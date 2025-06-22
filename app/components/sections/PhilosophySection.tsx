@@ -5,7 +5,7 @@ import { Monitor, Rocket, Code, Users, Heart, Lightbulb, Star } from "lucide-rea
 
 export default function PhilosophySection() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20">
+    <section className="py-20 px-4 font-serif" id="philosophy">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

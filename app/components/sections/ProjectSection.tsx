@@ -29,7 +29,7 @@ export default function ProjectSection() {
   const roles = ["発起人", "代表", "メイン開発者", "マネージャー"]
 
   return (
-    <section className="py-20 px-4" id="tankyu-archive">
+    <section className="py-20 px-4 font-serif" id="tankyu-archive">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"

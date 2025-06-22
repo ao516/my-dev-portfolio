@@ -13,7 +13,7 @@ export default function SkillsSection() {
   ]
 
   return (
-    <section className="py-20 px-4 bg-gray-900">
+    <section className="py-20 px-4 bg-gray-900 font-serif" id="skills">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"

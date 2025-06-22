@@ -22,19 +22,15 @@ export default function Portfolio() {
   const { scrollYProgress } = useScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
 
-  // ローディングアニメーション完了後の処理
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 3000) // 3秒後にローディング完了
-
-    return () => clearTimeout(timer)
-  }, [])
+  // Proceedボタンが押された時の処理
+  const handleProceed = () => {
+    setIsLoading(false)
+  }
 
   return (
-    <div className="bg-black text-white min-h-screen font-inter">
+    <div className="bg-black text-white min-h-screen font-serif">
       {/* ローディング画面 */}
-      <LoadingScreen isLoading={isLoading} />
+      <LoadingScreen isLoading={isLoading} onProceed={handleProceed} />
 
       {/* セクション1: 私の理念と概要 */}
       <PhilosophySection />

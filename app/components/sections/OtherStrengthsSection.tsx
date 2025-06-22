@@ -73,7 +73,7 @@ export default function OtherStrengthsSection() {
   ]
 
   return (
-    <section className="py-20 px-4 bg-gray-900" id="other-strengths">
+    <section className="py-20 px-4 bg-gray-900 font-serif" id="other-strengths">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"
