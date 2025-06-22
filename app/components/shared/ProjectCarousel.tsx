@@ -52,7 +52,7 @@ export default function ProjectCarousel({ screenshots }: ProjectCarouselProps) {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex-1 flex flex-col text-center"
+          className="flex-1 flex flex-col text-center py-8 md:py-12"
         >
           <div className="flex-grow">
             <h3 className="text-2xl font-bold text-cyan-400 mb-3">{screenshots[currentSlide].title}</h3>
@@ -69,14 +69,27 @@ export default function ProjectCarousel({ screenshots }: ProjectCarouselProps) {
           <div className="mt-8 flex items-center gap-4 justify-center">
             <button 
               onClick={prevSlide}
-              className="bg-gray-800 p-3 rounded-full text-cyan-400 hover:bg-gray-700 transition-all duration-300 shadow-md"
+              className="bg-gray-800 p-3 rounded-full text-cyan-400 hover:bg-gray-700 shadow-md"
               aria-label="前のスライドへ"
             >
               <ChevronLeft size={20} />
             </button>
+            {/* ページインジケーター */}
+            <div className="flex items-center gap-2">
+              {screenshots.map((_, idx) => (
+                <span
+                  key={idx}
+                  className={`w-3 h-3 rounded-full ${
+                    idx === currentSlide
+                      ? "bg-cyan-400 scale-110 shadow"
+                      : "bg-gray-600"
+                  }`}
+                />
+              ))}
+            </div>
             <button 
               onClick={nextSlide}
-              className="bg-gray-800 p-3 rounded-full text-cyan-400 hover:bg-gray-700 transition-all duration-300 shadow-md"
+              className="bg-gray-800 p-3 rounded-full text-cyan-400 hover:bg-gray-700 shadow-md"
               aria-label="次のスライドへ"
             >
               <ChevronRight size={20} />

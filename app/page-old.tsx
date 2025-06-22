@@ -268,8 +268,8 @@ export default function Portfolio() {
           >
             {[
               { icon: Palette, label: "UI/UX設計" },
-              { icon: Settings, label: "プロジェクト\nマネジメント" },
               { icon: Users, label: "チームリード" },
+              { icon: Settings, label: "プロジェクト\nマネジメント" },
               { icon: Heart, label: "社会課題解決\nへの意欲" },
               { icon: Target, label: "多角的な\n問題解決能力" },
             ].map((skill, index) => (

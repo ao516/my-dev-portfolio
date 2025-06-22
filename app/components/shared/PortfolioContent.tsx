@@ -17,19 +17,16 @@ export default function PortfolioContent() {
       {/* セクション2: キープロジェクト - 探究アーカイブ */}
       <ProjectSection />
 
-      {/* セクション3: 技術スタック */}
-      <TechStackSection />
-
-      {/* セクション4: プログラミング以外の強み */}
-      <OtherStrengthsSection />
-
-      {/* セクション5: その他の注目プロジェクト */}
+      {/* セクション3: その他の注目プロジェクト */}
       <OtherProjectsSection />
 
-      {/* セクション6: 将来の展望 */}
+      {/* セクション4: 技術スタック */}
+      <TechStackSection />
+
+      {/* セクション5: 将来の展望 */}
       <FutureVisionSection />
 
-      {/* セクション7: お問い合わせ */}
+      {/* セクション6: お問い合わせ */}
       <ContactSection />
     </div>
   )

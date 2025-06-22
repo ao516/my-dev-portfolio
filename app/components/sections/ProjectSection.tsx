@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Github, Smartphone, Palette, Settings, Users, Heart, Target } from "lucide-react"
+import { ExternalLink, Github, Smartphone, Palette, Settings, Users, Heart, Target, Code2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ProjectCarousel from "@/app/components/shared/ProjectCarousel"
 import Link from "next/link"
@@ -38,10 +38,10 @@ export default function ProjectSection() {
   ]
   const skills = [
     { icon: Palette, label: "UI/UX設計" },
-    { icon: Settings, label: "プロジェクト\nマネジメント" },
+    { icon: Code2, label: "プログラミング" },
     { icon: Users, label: "チームリード" },
-    { icon: Heart, label: "社会課題解決\nへの意欲" },
-    { icon: Target, label: "多角的な\n問題解決能力" },
+    { icon: Settings, label: "プロジェクト\nマネジメント" },
+    { icon: Heart, label: "ユーザー\nフィードバック" },
   ]
 
   return (
@@ -88,20 +88,20 @@ export default function ProjectSection() {
 
         {/* 3. スクリーンショットカルーセル */}
         <div className="bg-gray-800/50 rounded-3xl p-8 md:p-12">
-            <motion.div
-                className="flex justify-center"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-            >
-                <ProjectCarousel screenshots={projectScreenshots} />
-            </motion.div>
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <ProjectCarousel screenshots={projectScreenshots} />
+          </motion.div>
         </div>
 
-        {/* 4. その他のスキル */}
+        {/* 4. 自身の役割 */}
         <motion.div
-          className="max-w-4xl mx-auto mt-24"
+          className="max-w-5xl mx-auto mt-24"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -122,8 +122,56 @@ export default function ProjectSection() {
           </div>
         </motion.div>
 
-      
+        {/* 5. 外部リンク*/}
+
+        <motion.div
+          className="max-w-2xl mx-auto mt-24"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-3xl font-bold mb-8 text-center text-cyan-400">詳しくはこちら</h3>
+          <div className="flex flex-col gap-4 w-full">
+            <Link
+              href="https://apps.apple.com/jp/app/%E7%B8%A3%E9%99%B5%E6%8E%A2%E7%A9%B6%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96/id6738385612"
+              target="_blank"
+              rel="noopener noreferrer"
+              passHref
+            >
+              <Button
+                variant="outline"
+                className="w-full border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black"
+                asChild
+              >
+                <span>
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  App Store
+                </span>
+              </Button>
+            </Link>
+            <Link
+              href="https://github.com/ao516/kenryo_tankyu"
+              target="_blank"
+              rel="noopener noreferrer"
+              passHref
+            >
+              <Button
+                variant="outline"
+                className="w-full border-gray-600 text-gray-400 hover:bg-gray-600 hover:text-white"
+                asChild
+              >
+                <span>
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </span>
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
+
+
       </div>
     </section>
   )
-} 
+}
