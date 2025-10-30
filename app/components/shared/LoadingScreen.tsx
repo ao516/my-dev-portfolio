@@ -17,7 +17,7 @@ export default function LoadingScreen({ isLoading, onProceed }: LoadingScreenPro
   const [isFadingOut, setIsFadingOut] = useState(false)
   
   const fullText = "Aoi Goto"
-  const fullDescription = "テクノロジーとアートを融合させ、プロダクトを創造する"
+  const fullDescription = "人の「心」を豊かにするテクノロジーをつくる"
 
   useEffect(() => {
     setMounted(true)

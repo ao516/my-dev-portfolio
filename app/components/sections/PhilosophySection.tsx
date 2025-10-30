@@ -42,7 +42,7 @@ export default function PhilosophySection() {
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-cyan-400">私の信念</h2>
               <div className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent">
-                まだ見ぬ価値と感動を
+                人の心を豊かにするテクノロジーを。
               </div>
               <p className="text-lg text-gray-400">これが私がエンジニアであり続ける理由です</p>
             </div>
